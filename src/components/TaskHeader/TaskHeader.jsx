@@ -11,6 +11,13 @@ const TaskHeader = () => {
     <div data-cy="task-header" className={styles.taskHeader}>
       <b data-cy="header-remaining-task">{unCompletedTask}</b>
       <b data-cy="header-total-task">{totalTask}</b>
+      {/* {todolist.map((todo, index) => {
+        return (
+          <div>
+            <h5>{todo}</h5>
+          </div>
+        );
+      })} */}
     </div>
   );
 };

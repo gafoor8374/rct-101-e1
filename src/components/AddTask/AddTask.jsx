@@ -1,12 +1,40 @@
-import React from "react";
+import React ,{useState}from "react";
+import Task from "../Task/Task";
+// import TaskApp from "../TaskApp";
 import styles from "./addTask.module.css";
 
 const AddTask = () => {
+  const [task,setTask]=useState('')
+  const [todo,setTodo]= useState([])
   // NOTE: do not delete `data-cy` key value pair
   return (
     <div className={styles.todoForm}>
-      <input data-cy="add-task-input" type="text" />
-      <button data-cy="add-task-button"></button>
+      <div>
+        <h1>Todo List</h1>
+      </div>
+      <input
+  
+        onChange={(e) => {
+          setTask(e.target.value);
+        }}
+        data-cy="add-task-input"
+        type="text"
+        placeholder="Add task"
+      />
+      <button
+        onClick={() => {
+          const newTodo=[...todo,task];
+          setTodo(newTodo);
+          console.log(newTodo)
+          setTask("");
+        }}
+        data-cy="add-task-button"
+      >
+        +
+      </button>
+      <Task />
+      {/* <TaskApp todolist={todo}/> */}
+
     </div>
   );
 };

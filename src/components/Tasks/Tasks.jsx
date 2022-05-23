@@ -6,10 +6,11 @@ const Tasks = () => {
   return (
     <>
       <ul data-cy="tasks" className={styles.tasks}>
-        {/* Task List */}
+        
       </ul>
       <div data-cy="tasks-empty" className={styles.empty}>
         {/* Show when No Tasks are present */}
+        {/* {props.todo} */}
       </div>
     </>
   );
