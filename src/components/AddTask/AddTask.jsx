@@ -7,6 +7,10 @@ const AddTask = () => {
   const [task,setTask]=useState('')
   const [todo,setTodo]= useState([])
   // NOTE: do not delete `data-cy` key value pair
+  const deleteHandle=(indexValue)=>{
+    const newTodo = todo.filter((todolist,index)=>index!==indexValue)
+    setTodo(newTodo) 
+  }
   return (
     <div className={styles.todoForm}>
       <div>
@@ -32,7 +36,7 @@ const AddTask = () => {
       >
         +
       </button>
-      <Task />
+      <Task todolist={todo} deleteTodo={deleteHandle} />
       {/* <TaskApp todolist={todo}/> */}
 
     </div>
